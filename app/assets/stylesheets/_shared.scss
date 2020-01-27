@@ -1,0 +1,40 @@
+// *** ヘッダー *** //
+
+.header{
+  height: 60px;
+  width: 100%;
+  background-color: steelblue;
+  &__box{
+    height: 100%;
+    padding: 10px;
+    &__left{
+      width: 80%;
+      float: left;
+      text-align: center;
+    }
+    &__right{
+      width: 20%;
+      float: right;
+    }
+  }
+}
+
+.header-logo{
+  line-height: 40px;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  padding-left: 10%;
+}
+
+.header-menu{
+  line-height: 40px;
+  font-size: 30px;
+  text-align: right;
+  color: whitesmoke;
+  padding-right: 10px;
+}
+
+
+
+// *** フッター *** //
