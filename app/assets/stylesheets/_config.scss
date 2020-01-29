@@ -5,6 +5,7 @@ $default-back: #f0f0ef;
 $default-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px;
 $default-border: 1px solid lightgray;
 $ruby-crimson: #470d0e;
+$gray-back: #dfdfdf;
 
 
 // *** 共通設定 *** //
@@ -41,12 +42,12 @@ a:hover{
 .container{
   height: calc(100% - 120px);
   overflow: scroll;
-  margin: 0 auto;
   background-color: $default-back;
-  &__box{
-    padding: 20px 0;
-    margin: 0 auto;
-    max-width: 760px;
-  }
 }
 
+.wrapper{
+  min-height: 100%;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 10px;
+}

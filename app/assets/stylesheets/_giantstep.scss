@@ -1,1 +1,14 @@
+@import 'config';
+
 // *** TOPページ *** //
+
+.top-contents{
+  padding: 10px;
+}
+
+.top-content{
+  height: 300px;
+  box-shadow: $default-shadow;
+  background-color: whitesmoke;
+}
+

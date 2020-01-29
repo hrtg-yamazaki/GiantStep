@@ -3,17 +3,14 @@
 .header{
   height: 60px;
   width: 100%;
-  background-color: $default-back;
+  background-color: whitesmoke;
   border-bottom: $default-border;
   &__box{
     height: 100%;
-    max-width: 760px;
-    padding: 0 10px;
     margin: 0 auto;
     &__left{
       width: 80%;
       float: left;
-      text-align: center;
     }
     &__right{
       width: 20%;
@@ -27,7 +24,7 @@
   font-size: 26px;
   letter-spacing: 1px;
   color: $ruby-crimson;
-  padding-left: 20%;
+  padding-left: 10%;
 }
 
 .header-menu{
@@ -35,7 +32,7 @@
   font-size: 30px;
   text-align: right;
   color: $ruby-crimson;
-  padding-right: 10px;
+  padding-right: 40%;
 }
 
 .header-menu:hover{
@@ -48,9 +45,10 @@
 .footer{
   width: 100%;
   height: 60px;
-  background-color: $ruby-crimson;
+  background-color: whitesmoke;
+  border-top: $default-border;
   &__box{
-    max-width: 760px;
+    max-width: 1080px;
     height: 100%;
     margin: 0 auto;
     border-left: $default-border;
@@ -64,13 +62,13 @@
   display: inline-block;
   text-align: center;
   font-size: 30px;
-  color: whitesmoke;
+  color: $ruby-crimson;
   &__icon{
     line-height: 60px;
   }
 }
 
 .footer-content:hover{
-  background-color: whitesmoke;
+  background-color: $ruby-crimson;
   color: steelblue;
 }
