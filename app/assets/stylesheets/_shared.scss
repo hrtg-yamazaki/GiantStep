@@ -3,10 +3,13 @@
 .header{
   height: 60px;
   width: 100%;
-  background-color: steelblue;
+  background-color: $default-back;
+  border-bottom: $default-border;
   &__box{
     height: 100%;
-    padding: 10px;
+    max-width: 760px;
+    padding: 0 10px;
+    margin: 0 auto;
     &__left{
       width: 80%;
       float: left;
@@ -20,21 +23,54 @@
 }
 
 .header-logo{
-  line-height: 40px;
+  line-height: 60px;
   font-size: 26px;
   letter-spacing: 1px;
-  color: whitesmoke;
-  padding-left: 10%;
+  color: $ruby-crimson;
+  padding-left: 20%;
 }
 
 .header-menu{
-  line-height: 40px;
+  line-height: 60px;
   font-size: 30px;
   text-align: right;
-  color: whitesmoke;
+  color: $ruby-crimson;
   padding-right: 10px;
 }
 
+.header-menu:hover{
+  color: steelblue;
+}
 
 
 // *** フッター *** //
+
+.footer{
+  width: 100%;
+  height: 60px;
+  background-color: $ruby-crimson;
+  &__box{
+    max-width: 760px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: $default-border;
+    border-right: $default-border;
+  }
+}
+
+.footer-content{
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  color: whitesmoke;
+  &__icon{
+    line-height: 60px;
+  }
+}
+
+.footer-content:hover{
+  background-color: whitesmoke;
+  color: steelblue;
+}

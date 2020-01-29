@@ -1,9 +1,10 @@
 %footer.footer
-  = link_to '', class: 'footer__content' do
-    = fa_icon 'home'
-  = link_to '', class: 'footer__content' do
-    = fa_icon 'edit'
-  = link_to '', class: 'footer__content' do
-    = fa_icon 'search'
-  = link_to '', class: 'footer__content' do
-    = fa_icon 'cog'
+  .footer__box
+    = link_to '', class: 'footer-content' do
+      = fa_icon 'home', class:'footer-content__icon'
+    = link_to '', class: 'footer-content side-serve' do
+      = fa_icon 'edit', class:'footer-content__icon'
+    = link_to '', class: 'footer-content side-serve' do
+      = fa_icon 'search', class:'footer-content__icon'
+    = link_to '', class: 'footer-content side-serve' do
+      = fa_icon 'cog', class:'footer-content__icon'
