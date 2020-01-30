@@ -68,3 +68,4 @@ gem "jquery-rails"
 gem "devise"
 gem "font-awesome-rails"
 
+gem 'enum_help'

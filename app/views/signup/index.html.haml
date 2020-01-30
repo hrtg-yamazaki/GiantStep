@@ -22,3 +22,10 @@
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
     = f.submit "Sign up"
+
+
+  -# .field
+  -#   = f.label :gender
+  -#   %br/
+  -#   = f.select :gender, User.genders_i18n.invert                必要ないなら削除 → , prompt:"---"
+

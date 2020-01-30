@@ -12,4 +12,6 @@ class User < ApplicationRecord
   validates :password, presence: { message: "パスワード を入力してください" }, on: :keep, length: { maximum: 128, message: "128文字以下で入力してください" }, format: { with: VALID_PASSWORD_REGIX, message: "英字と数字両方を含むパスワードを入力してください" }, confirmation: { message: 'パスワードが一致しません'}
   validates :password_confirmation, presence: { message: '確認用にパスワードを入力してください' }, on: :keep
 
+  enum gender: [ :not_public, :male, :female ]
+
 end
