@@ -2,10 +2,6 @@
 = form_for @user, url: keep_signup_index_path, method: :post do |f|
   = render partial: "error_messages", locals: { model: @user }
   .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofucus: true, autocomplete: 'nickname'
-  .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -21,11 +17,7 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
-    = f.submit "Sign up"
+    = f.submit "次へ"
 
 
-  -# .field
-  -#   = f.label :gender
-  -#   %br/
-  -#   = f.select :gender, User.genders_i18n.invert                必要ないなら削除 → , prompt:"---"
-
+ 
