@@ -2,10 +2,16 @@ $(document).on('turbolinks:load', function(){
 
   $(function(){
 
-    $('.hello').click(function(){
+    $(".header-menu__icon").click(function(){
+      $(".header-lists").slideToggle();
+      $(this).css("display", "none");
+      $(".header-menu__close").css("display", "inline");
+    });
 
-      $('.hello').css('color', 'navy');
-      
+    $(".header-menu__close").click(function(){
+      $(".header-lists").slideToggle();
+      $(this).css("display", "none");
+      $(".header-menu__icon").css("display", "inline");
     })
 
   })

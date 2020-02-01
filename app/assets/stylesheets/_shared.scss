@@ -7,6 +7,7 @@
   width: 100%;
   background-color: whitesmoke;
   border-bottom: $default-border;
+  z-index: 10;
   &__box{
     height: 100%;
     margin: 0 auto;
@@ -35,12 +36,19 @@
   text-align: right;
   color: $ruby-crimson;
   padding-right: 40%;
+  &__close{
+    display: none;
+    cursor: pointer;
+  }
 }
 
 .header-menu:hover{
   color: steelblue;
 }
 
+.header-lists{
+  display: none;
+}
 
 // *** フッター *** //
 
