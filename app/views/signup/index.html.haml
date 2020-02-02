@@ -1,23 +1,32 @@
-%h2 Sign up
-= form_for @user, url: keep_signup_index_path, method: :post do |f|
-  = render partial: "error_messages", locals: { model: @user }
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "次へ"
+.container
+  .wrapper
+    .accounts-wrapper
+      .accounts-wrapper__box
+        .accounts-wrapper__box__head
+          %h2.accounts-head 新規登録
+        .accounts-wrapper__box__content
+          = form_for @user, url: keep_signup_index_path, html: {class: 'accounts-form'}, method: :post do |f|
+            = render partial: "error_messages", locals: { model: @user }
+            .accounts-field
+              = f.label :email, class: 'accounts-label'
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'accounts-input'
+            .accounts-field
+              = f.label :password, class: 'accounts-label'
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              = f.password_field :password, autocomplete: "new-password", class: 'accounts-input'
+            .accounts-field
+              %p.signup-message 確認のため、もう一度パスワードを入力してください。
+              = f.label :password_confirmation,class: 'accounts-label'
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'accounts-input'
+            .accounts-actions
+              = f.submit "次へ", class: 'accounts-submit'
+
+      
+
+
+      
 
 
  

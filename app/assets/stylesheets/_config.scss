@@ -35,6 +35,10 @@ a:hover{
   color: steelblue;
 }
 
+h1, h2, h3, h4, p, label{
+  color: #333;
+}
+
 .side-serve{
   border-left: $default-border;
 }
@@ -51,4 +55,9 @@ a:hover{
   max-width: 1080px;
   min-width: 75%;
   padding: 10px;
+}
+
+.error-message{
+  font-size: 14px;
+  color: red;
 }
