@@ -36,6 +36,27 @@
 .accounts-field{
   padding: 20px 0;
   text-align: center;
+  select{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    border: $default-border;
+  }
+  &__sprint{
+    width: 100%;
+    font-size: 14px;
+    select{
+      display: inline-block;
+      min-width: 10%;
+      max-width: 25%;
+      padding: 5px 0;
+    }
+    .year{
+      min-width: 25%;
+    }
+  }
 }
 
 .accounts-label{
@@ -49,11 +70,19 @@
 .accounts-input{
   width: 100%;
   height: 40px;
-  font-size: 20px;
+  font-size: 16px;
   padding: 5px;
   border-radius: 4px;
   border: $default-border;
   -webkit-appearance: none;
+}
+
+.accounts-textarea{
+  width: 100%;
+  height: 200px;
+  font-size: 20px;
+  padding: 5px;
+  border: $default-border;
 }
 
 .accounts-actions{
