@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_30_074147) do
+ActiveRecord::Schema.define(version: 2020_02_05_045856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "statuses", force: :cascade do |t|
+    t.integer "sleep", default: 0, null: false
+    t.integer "study", default: 0, null: false
+    t.integer "exercise", default: 0, null: false
+    t.integer "diet", default: 0, null: false
+    t.integer "habit", default: 0, null: false
+    t.integer "aim", default: 0, null: false
+    t.integer "login", default: 0, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_statuses_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +45,5 @@ ActiveRecord::Schema.define(version: 2020_01_30_074147) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "statuses", "users"
 end
