@@ -1,0 +1,9 @@
+@import 'config';
+
+.cumulative-chart{
+  width: 100%;
+  height: 400px;
+  &__rader{
+    padding: 2%;
+  }
+}

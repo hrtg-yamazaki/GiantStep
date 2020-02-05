@@ -1,5 +1,8 @@
 {
   "name": "GiantStep",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "vue-chartjs": "^3.5.0"
+  }
 }

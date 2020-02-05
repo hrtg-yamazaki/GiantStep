@@ -67,6 +67,7 @@ class SignupController < ApplicationController
 
   end
 
+
   private
 
   def user_params

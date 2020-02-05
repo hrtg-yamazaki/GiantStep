@@ -69,3 +69,5 @@ gem "devise"
 gem "font-awesome-rails"
 
 gem 'enum_help'
+gem 'chart-js-rails'
+
