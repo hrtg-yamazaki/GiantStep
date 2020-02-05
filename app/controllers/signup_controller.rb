@@ -43,11 +43,16 @@ class SignupController < ApplicationController
       profile: user_params[:profile],
     )
     if @user.valid?(:user_create)
-      binding.pry
       if @user.save
         session[:id] = @user.id
         sign_in User.find(session[:id]) unless user_signed_in?
-        redirect_to complete_signup_index_path
+        @status = Status.new(user_id: current_user.id)
+        if @status.save
+          redirect_to complete_signup_index_path
+        else
+          flash.now[:alert] = 'エラーが発生しました。最初からやり直してください'
+          render "signup/profile"
+        end
       else
         render "signup/profile"
       end

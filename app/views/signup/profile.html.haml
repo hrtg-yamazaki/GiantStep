@@ -5,7 +5,7 @@
         .accounts-wrapper__box__head
           %h2.accounts-head 新規登録
         .accounts-wrapper__box__content
-          = form_for @user, url: keep_signup_index_path, html: {class: 'accounts-form'}, method: :post do |f|
+          = form_for @user, url: user_create_signup_index_path, html: {class: 'accounts-form'}, method: :post do |f|
             = render partial: "error_messages", locals: { model: @user }
             .accounts-field
               = f.label :nickname, class: 'accounts-label'
