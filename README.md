@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## このアプリについて
+  
+### 概要
 
-Things you may want to cover:
+生活習慣を記録アプリケーションです。(現在開発中)  
+毎日ログインしてその日の生活習慣(食生活や睡眠、自主学習や目標達成など)を記録し、chart.jsで描画したグラフを使ってモニタリングする機能を実装していく予定です。  
+###### ※2020.02.06現在、未デプロイです。
+(編集中)
 
-* Ruby version
 
-* System dependencies
+### 作成意図について
 
-* Configuration
+(編集中)
 
-* Database creation
 
-* Database initialization
+### 使用技術・開発環境
 
-* How to run the test suite
+##### サーバーサイド
+Ruby / Ruby on Rails
+##### フロントエンド
+haml / scss / jQuery / chart.js
+##### その他
+PostgreSQL / GitHub /
 
-* Services (job queues, cache servers, search engines, etc.)
+## 更新履歴
 
-* Deployment instructions
-
-* ...
+2020.01下旬 作成開始  

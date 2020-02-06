@@ -35,6 +35,7 @@ $(document).on('turbolinks:load', function(){
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scale: {
           ticks: {
             display: true,
