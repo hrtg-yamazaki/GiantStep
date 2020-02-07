@@ -72,3 +72,4 @@ gem 'enum_help'
 gem 'chart-js-rails'
 
 gem 'simple_calendar'
+gem 'bootstrap'
