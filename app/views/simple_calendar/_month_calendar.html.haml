@@ -1,15 +1,15 @@
 .simple-calendar
   .calendar-heading
-    = link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view
+    = link_to t('simple_calendar.previous', default: '前月'), calendar.url_for_previous_view, class:'previous-month'
     %span.calendar-title
-      = t('date.month_names')[start_date.month]
       = start_date.year
-    = link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view
+      = t('date.month_names')[start_date.month]
+    = link_to t('simple_calendar.next', default: '次月'), calendar.url_for_next_view, class: 'next-month'
   %table.table.table-striped
     %thead
       %tr
         - date_range.slice(0, 7).each do |day|
-          %th= t('date.abbr_day_names')[day.wday]
+          %th= t('date.abbr_day_names_en')[day.wday]
     %tbody
       - date_range.each_slice(7) do |week|
         %tr

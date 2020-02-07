@@ -15,6 +15,14 @@ ja:
     - 木
     - 金
     - 土
+    abbr_day_names_en:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
     abbr_month_names:
     - 
     - 1月

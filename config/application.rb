@@ -16,5 +16,8 @@ module GiantStep
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.beginning_of_week = :sunday
+    
   end
 end
