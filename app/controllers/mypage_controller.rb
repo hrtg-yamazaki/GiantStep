@@ -3,7 +3,7 @@ class MypageController < ApplicationController
   before_action :redirect_to_toppage
 
   def index
-    
+    @status = current_user.status
   end
 
   private

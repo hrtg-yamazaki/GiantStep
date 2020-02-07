@@ -1,0 +1,9 @@
+.hidden-data
+  = form_for @status, url: mypage_index_path, html: {class: 'hidden-form'} do |f|
+    = f.hidden_field :sleep, value: @status.sleep
+    = f.hidden_field :study, value: @status.study
+    = f.hidden_field :exercise, value: @status.exercise
+    = f.hidden_field :diet, value: @status.diet
+    = f.hidden_field :habit, value: @status.habit
+    = f.hidden_field :aim, value: @status.aim
+    = f.hidden_field :login, value: @status.login

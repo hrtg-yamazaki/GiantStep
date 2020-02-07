@@ -4,6 +4,15 @@ $(document).on('turbolinks:load', function(){
 
     var canvas = $("#cumulative-radar")[0];
     var context = canvas.getContext("2d");
+    
+    var sleep = $('#status_sleep').val();
+    var study = $('#status_study').val();
+    var exercise = $('#status_exercise').val();
+    var diet = $('#status_diet').val();
+    var habit = $('#status_habit').val();
+    var aim = $('#status_aim').val();
+    var login = $('#status_login').val();
+    var statusArray = [sleep, study, exercise, diet, habit, aim, login]
 
     var cumRadarChart = new Chart(context, {
       type: 'radar',
@@ -11,7 +20,7 @@ $(document).on('turbolinks:load', function(){
         labels: ['睡眠', '運動', '勉強', '食事', '悪癖', '目標', '継続'],
         datasets: [{
           label: '累計実績',
-          data: [12, 10, 9, 28, 10, 4, 8],
+          data: statusArray,
           // backgroundColor: [
           //   'white',
           //   'whitesmoke',
@@ -58,8 +67,6 @@ $(document).on('turbolinks:load', function(){
           // //   }
           // // }]
         // },
-        
-        
       }
     });
   })
