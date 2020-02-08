@@ -18,16 +18,18 @@
     }
   }
   &__main{
-    padding: 10px;
+    padding: 30px 10px;
     &__chart{
       width: 49%;
       height: 400px;
       display: inline-block;
+      padding: 20px 0;
     }
     &__sheet{
       width: 49%;
       height: 400px;
       display: inline-block;
+      padding: 20px 0;
     }
   }
 }
@@ -42,4 +44,43 @@
 #cumulative-radar{
   height: 100%;
   width: 100%;
+}
+
+.cumulative-sheet{
+  width: 90%;
+  margin: 5%;
+  border: $default-border;
+  border-collapse: collapse;
+  &__head{
+    background-color: steelblue;
+    color: steelblue;
+    &__row{
+      &--left{
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+      }
+      &--right{
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+      }
+    }
+  }
+  &__body{
+    &__row{
+      &--left{
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+        border: $default-border;
+      }
+      &--right{
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+        border: $default-border;
+      }
+    }
+  }
 }

@@ -15,29 +15,34 @@
             .sheet-comment
               %h3.sheet-comment__text
             %table.cumulative-sheet
-              %thead.cumulative-sheet__head
-                %tr.cumulative-sheet__head__row
-                  %th.cumulative-sheet__head__row--left 合計ログイン日数
-                  %th.cumulative-sheet__head__row--right=@status.login
               %tbody.cumulative-sheet__body
                 %tr.cumulative-sheet__body__row
-                  %th.cumulative-sheet__body__row--left 睡眠
-                  %th.cumulative-sheet__body__row--right=@status.sleep
+                  %td.cumulative-sheet__body__row--left 合計ログイン日数
+                  %td.cumulative-sheet__body__row--right=@status.login
+            %table.cumulative-sheet
+              %thead.cumulative-sheet__head
+                %tr.cumulative-sheet__head__row
+                  %th.cumulative-sheet__head__row--left .
+                  %th.cumulative-sheet__head__row--right .
+              %tbody.cumulative-sheet__body
                 %tr.cumulative-sheet__body__row
-                  %th.cumulative-sheet__body__row--left 自主学習
-                  %th.cumulative-sheet__body__row--right=@status.study
+                  %td.cumulative-sheet__body__row--left 睡眠
+                  %td.cumulative-sheet__body__row--right=@status.sleep
                 %tr.cumulative-sheet__body__row
-                  %th.cumulative-sheet__body__row--left 運動
-                  %th.cumulative-sheet__body__row--right=@status.exercise
+                  %td.cumulative-sheet__body__row--left 自主学習
+                  %td.cumulative-sheet__body__row--right=@status.study
                 %tr.cumulative-sheet__body__row
-                  %th.cumulative-sheet__body__row--left 食習慣
-                  %th.cumulative-sheet__body__row--right=@status.diet
+                  %td.cumulative-sheet__body__row--left 運動
+                  %td.cumulative-sheet__body__row--right=@status.exercise
                 %tr.cumulative-sheet__body__row
-                  %th.cumulative-sheet__body__row--left 嗜好品
-                  %th.cumulative-sheet__body__row--right=@status.habit
+                  %td.cumulative-sheet__body__row--left 食習慣
+                  %td.cumulative-sheet__body__row--right=@status.diet
                 %tr.cumulative-sheet__body__row
-                  %th.cumulative-sheet__body__row--left 目標達成
-                  %th.cumulative-sheet__body__row--right=@status.aim
+                  %td.cumulative-sheet__body__row--left 嗜好品
+                  %td.cumulative-sheet__body__row--right=@status.habit
+                %tr.cumulative-sheet__body__row
+                  %td.cumulative-sheet__body__row--left 目標達成
+                  %td.cumulative-sheet__body__row--right=@status.aim
           .mypage-content__main__calendar
             .month-calendar
             = month_calendar do |date|
