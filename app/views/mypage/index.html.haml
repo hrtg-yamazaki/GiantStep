@@ -2,11 +2,43 @@
   
 .container
   .wrapper
-    .top-contents
-      .top-content
-        %h1 マイページ
-        .cumulative-chart
-          %canvas#cumulative-radar.cumulative-chart__rader{style: 'height:100%; width: 100%;'}
-        .month-calendar
-          = month_calendar do |date|
-            = date.day
+    .mypage-contents
+      .mypage-content
+        .mypage-content__head
+          %h2.mypage-content__head__text マイページ
+        
+        .mypage-content__main
+          .mypage-content__main__chart
+            .cumulative-chart
+              %canvas#cumulative-radar.cumulative-chart__rader{style: 'height:100%; width: 100%;'}
+          .mypage-content__main__sheet
+            .sheet-comment
+              %h3.sheet-comment__text
+            %table.cumulative-sheet
+              %thead.cumulative-sheet__head
+                %tr.cumulative-sheet__head__row
+                  %th.cumulative-sheet__head__row--left 合計ログイン日数
+                  %th.cumulative-sheet__head__row--right=@status.login
+              %tbody.cumulative-sheet__body
+                %tr.cumulative-sheet__body__row
+                  %th.cumulative-sheet__body__row--left 睡眠
+                  %th.cumulative-sheet__body__row--right=@status.sleep
+                %tr.cumulative-sheet__body__row
+                  %th.cumulative-sheet__body__row--left 自主学習
+                  %th.cumulative-sheet__body__row--right=@status.study
+                %tr.cumulative-sheet__body__row
+                  %th.cumulative-sheet__body__row--left 運動
+                  %th.cumulative-sheet__body__row--right=@status.exercise
+                %tr.cumulative-sheet__body__row
+                  %th.cumulative-sheet__body__row--left 食習慣
+                  %th.cumulative-sheet__body__row--right=@status.diet
+                %tr.cumulative-sheet__body__row
+                  %th.cumulative-sheet__body__row--left 嗜好品
+                  %th.cumulative-sheet__body__row--right=@status.habit
+                %tr.cumulative-sheet__body__row
+                  %th.cumulative-sheet__body__row--left 目標達成
+                  %th.cumulative-sheet__body__row--right=@status.aim
+          .mypage-content__main__calendar
+            .month-calendar
+            = month_calendar do |date|
+              = date.day
