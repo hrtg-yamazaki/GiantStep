@@ -14,16 +14,35 @@
           .mypage-content__main__sheet
             .sheet-comment
               %h3.sheet-comment__text
-            %table.cumulative-sheet
-              %tbody.cumulative-sheet__body
-                %tr.cumulative-sheet__body__row
-                  %td.cumulative-sheet__body__row--left 合計ログイン日数
-                  %td.cumulative-sheet__body__row--right=@status.login
+            -# %table.cumulative-sheet
+            -#   %thead.cumulative-sheet__head
+            -#     %tr.cumulative-sheet__head__row
+            -#       %th.cumulative-sheet__head__row--left{colspan: "2"} 利用状況
+            -#       -# %th.cumulative-sheet__head__row--right .
+            -#   %tbody.cumulative-sheet__body
+            -#     %tr.cumulative-sheet__body__row
+            -#       %td.cumulative-sheet__body__row--left 合計日数
+            -#       %td.cumulative-sheet__body__row--right=@status.login
+            -#     %tr.cumulative-sheet__body__row
+            -#       %td.cumulative-sheet__body__row--left 継続日数
+            -#       %td.cumulative-sheet__body__row--right (準備中)
+            -#     %tr.cumulative-sheet__body__row
+            -#       %td.cumulative-sheet__body__row--left 利用開始日
+            -#       %td.cumulative-sheet__body__row--right=@status.user.created_at.strftime("%Y/%m/%d")
             %table.cumulative-sheet
               %thead.cumulative-sheet__head
                 %tr.cumulative-sheet__head__row
-                  %th.cumulative-sheet__head__row--left .
-                  %th.cumulative-sheet__head__row--right .
+                  %th.cumulative-sheet__head__row--left{colspan: "2"} 累計実績
+                  -# %th.cumulative-sheet__head__row--right .
+              %tbody.cumulative-sheet__body
+                %tr.cumulative-sheet__body__row
+                  %td.cumulative-sheet__body__row--left 合計ポイント
+                  %td.cumulative-sheet__body__row--right=Status.total_point(@status)
+            %table.cumulative-sheet
+              %thead.cumulative-sheet__head
+                %tr.cumulative-sheet__head__row
+                  %th.cumulative-sheet__head__row--left{colspan: "2"} 累計実績 ( 科目別 ) 
+                  -# %th.cumulative-sheet__head__row--right .
               %tbody.cumulative-sheet__body
                 %tr.cumulative-sheet__body__row
                   %td.cumulative-sheet__body__row--left 睡眠
