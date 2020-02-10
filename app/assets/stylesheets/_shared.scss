@@ -8,6 +8,9 @@
   background-color: $ruby-crimson;
   border-bottom: $default-border;
   z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
   &__box{
     height: 100%;
     margin: 0 auto;
