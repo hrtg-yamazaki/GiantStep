@@ -17,6 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :records, only: [:index, :new, :create]
+  resources :records, only: :index do
+    collection do
+      get "recorded"
+    end
+  end
+  resources :records, only: [:new, :create]
 
 end

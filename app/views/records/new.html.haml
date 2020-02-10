@@ -2,7 +2,12 @@
   .wrapper
     %h1 記録入力ページ
     = form_for @record, url: records_path, method: :post do |f|
+      -# 後ほど全カラムセレクト形式に変更する
       = f.number_field :sleep
       = f.number_field :study
-      -# 後ほどセレクト形式で全カラム用意する
+      = f.number_field :exercise
+      = f.number_field :diet
+      = f.number_field :habit
+      = f.number_field :aim
+     
       = f.submit "登録"
