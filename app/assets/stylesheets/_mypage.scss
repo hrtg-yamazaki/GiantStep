@@ -3,35 +3,126 @@
 
 .mypage-contents{
   padding: 10px;
-}
-
-.mypage-content{
-  box-shadow: $default-shadow;
-  background-color: whitesmoke;
   &__head{
-    padding: 20px 0;
-    border-bottom: $default-border;
+    width: 280px;
+    padding: 5px 0;
+    margin: 0 auto;
+    box-shadow: $default-shadow;
+    background-color: steelblue;
     &__text{
-      font-size: 20px;
-      font-weight: bold;
       text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: whitesmoke;
     }
   }
   &__main{
-    padding: 30px 10px;
-    &__chart{
-      width: 49%;
-      height: 400px;
-      display: inline-block;
-      padding: 20px 0;
+    margin-top: 20px;
+    min-height: 550px;
+    &__left{
+      width: 67%;
+      float: left;
+      padding: 10px;
     }
-    &__sheet{
-      width: 49%;
-      height: 400px;
-      display: inline-block;
-      padding: 20px 0;
+    &__right{
+      width: 33%;
+      float: right;
+      padding: 10px 10px 10px 20px;
     }
   }
+}
+
+.mypage-left{
+  min-height: 500px;
+  &__content{
+    box-shadow: $default-shadow;
+    background-color: whitesmoke;
+    padding: 20px;
+    &__chart{
+      float: left;
+      width: 400px;
+      height: 330px;
+    }
+    &__sheet{
+      float: right;
+      width: 199px;
+    }
+  }
+}
+
+.mypage-interface{
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: $default-shadow;
+  &__box{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-collapse: collapse;
+    &__content{
+      height: 45px;
+      width: 25%;
+      line-height: 45px;
+      text-align: center;
+      font-size: 16px;
+      color: whitesmoke;
+      background-color: steelblue;
+      border: 1px solid whitesmoke;
+      cursor: pointer;
+    }
+    &__content:hover{
+      background-color: whitesmoke;
+      color: #333;
+    }
+  }
+}
+
+.mypage-right{
+  min-height: 500px;
+  &__content{
+    box-shadow: $default-shadow;
+    background-color: whitesmoke;
+    padding: 5px;
+  }
+}
+
+.mypage-profile{
+  padding: 20px 0;
+  &__thumbnail{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    background-color: silver;
+    border: 1px solid steelblue;
+    display: flex;
+    align-items: center;
+  }
+  &__name{
+    padding: 10px 0;
+    border-bottom: $default-border;
+    &__text{
+      text-align: center;
+    }
+  }
+  &__level{
+    padding: 10px 0;
+    border-bottom: $default-border;
+    &__text{
+      text-align: center;
+    }
+  }
+  &__sheet{
+    padding: 10px 0;
+    border-bottom: $default-border;
+  }
+}
+
+
+.no-image{
+  color: whitesmoke;
+  margin: 0 auto;
+  font-size: 16px;
 }
 
 .cumulative-chart{
