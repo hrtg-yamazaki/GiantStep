@@ -1,0 +1,8 @@
+.container
+  .wrapper
+    %h1 記録入力ページ
+    = form_for @record, url: records_path, method: :post do |f|
+      = f.number_field :sleep
+      = f.number_field :study
+      -# 後ほどセレクト形式で全カラム用意する
+      = f.submit "登録"
