@@ -8,6 +8,14 @@ ja:
           female: '女性'
   activerecord:
     attributes:
+      status:
+        sleep: 睡眠
+        study: 勉強
+        exercise: 運動
+        diet: 食事
+        habit: 悪癖
+        aim: 目標達成
+        login: ログイン日数
       user:
         birthday: 生年月日
         confirmation_sent_at: パスワード確認送信時刻
@@ -36,6 +44,14 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      record:
+        sleep: 睡眠
+        study: 勉強
+        exercise: 運動
+        diet: 食事
+        habit: 悪癖、嗜好
+        aim: その他の目標
+        login: ログイン
     models:
       user: ユーザ
   devise:

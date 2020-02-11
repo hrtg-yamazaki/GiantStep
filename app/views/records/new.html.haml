@@ -2,12 +2,25 @@
   .wrapper
     %h1 記録入力ページ
     = form_for @record, url: records_path, method: :post do |f|
-      -# 後ほど全カラムセレクト形式に変更する
-      = f.number_field :sleep
-      = f.number_field :study
-      = f.number_field :exercise
-      = f.number_field :diet
-      = f.number_field :habit
-      = f.number_field :aim
-     
-      = f.submit "登録"
+      
+      .record-field
+        = f.label :sleep
+        = f.select :sleep, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+      .record-field
+        = f.label :study
+        = f.select :study, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+      .record-field
+        = f.label :exercise
+        = f.select :exercise, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+      .record-field
+        = f.label :diet
+        = f.select :diet, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+      .record-field
+        = f.label :habit
+        = f.select :habit, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+      .record-field
+        = f.label :aim
+        = f.select :aim, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+
+      .record-submit
+        = f.submit "登録"

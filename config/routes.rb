@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :records, only: :index do
     collection do
       get "recorded"
+      get "redirecting"
     end
   end
   resources :records, only: [:new, :create]
