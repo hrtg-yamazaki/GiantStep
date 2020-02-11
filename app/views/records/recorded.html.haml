@@ -1,3 +1,6 @@
 .container
   .wrapper
     %h1 本日の登録は終了しています。
+    = link_to 'マイページへ戻る', mypage_index_path
+    %br/
+    = link_to '登録済みのデータが反映されない方はこちらをクリックしてください', calculate_statuses_path(@status), method: :patch

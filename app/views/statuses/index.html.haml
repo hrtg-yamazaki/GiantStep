@@ -1,0 +1,6 @@
+.container
+  .wrapper
+    %p 登録済みのデータが反映されない方は以下の再計算ボタンを押してください
+    = link_to '再計算', calculate_statuses_path(@status), method: :patch
+    %p 本日の登録がお済みで無い方は以下のボタンより登録へお進みください
+    = link_to '登録', new_record_path

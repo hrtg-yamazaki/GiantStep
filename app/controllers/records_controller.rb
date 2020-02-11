@@ -1,7 +1,7 @@
 class RecordsController < ApplicationController
 
   before_action :redirect_to_toppage
-  before_action :confirm_recorded, only: [:index, :new, :create]
+  before_action :confirm_recorded, except: :recorded
 
   def index
     
@@ -9,7 +9,7 @@ class RecordsController < ApplicationController
 
 
   def recorded
-
+    @status = current_user.status
   end
 
 
@@ -21,10 +21,9 @@ class RecordsController < ApplicationController
   def create
 
     @record = Record.new(record_params)
-    binding.pry
     if @record.valid?
       if @record.save
-        redirect_to mypage_index_path
+        redirect_to calculate_statuses_path
       else
         render 'records/new'
       end

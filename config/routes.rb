@@ -24,4 +24,11 @@ Rails.application.routes.draw do
   end
   resources :records, only: [:new, :create]
 
+  resources :statuses, only: :index do
+    collection do
+      get "reflected"
+      patch "calculate"
+    end
+  end
+
 end
