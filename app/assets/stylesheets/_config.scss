@@ -48,10 +48,10 @@ canvas{
 }
 
 .container{
-  height: calc(100% - 120px);
+  height: calc(100% - 60px);
   overflow: scroll;
   background-color: $default-back;
-  margin-top: 60px;
+  padding-top: 60px;
 }
 
 .wrapper{

@@ -11,13 +11,13 @@ $(document).on('turbolinks:load', function(){
     var diet = $('#status_diet').val();
     var habit = $('#status_habit').val();
     var aim = $('#status_aim').val();
-    var login = $('#status_login').val();
-    var statusArray = [sleep, study, exercise, diet, habit, aim, login]
+
+    var statusArray = [sleep, study, exercise, diet, habit, aim]
 
     var cumRadarChart = new Chart(context, {
       type: 'radar',
       data: {
-        labels: ['睡眠', '運動', '勉強', '食事', '悪癖', '目標', '継続'],
+        labels: ['睡眠', '運動', '勉強', '食事', '悪癖', '目標'],
         datasets: [{
           label: '累計実績',
           data: statusArray,
@@ -37,7 +37,6 @@ $(document).on('turbolinks:load', function(){
             'purple',
             'green',
             'orange',
-            'steelblue'
           ],
           borderWidth: 2
         }]
