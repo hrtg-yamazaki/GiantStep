@@ -47,16 +47,19 @@ class SignupController < ApplicationController
         session[:id] = @user.id
         sign_in User.find(session[:id]) unless user_signed_in?
         @status = Status.new(user_id: current_user.id)
-        if @status.save
+        setting_default_yardstick
+        if @status.save && @yardstick.save
           redirect_to complete_signup_index_path
         else
           flash.now[:alert] = 'エラーが発生しました。最初からやり直してください'
           render "signup/profile"
         end
       else
+        flash.now[:alert] = 'エラーが発生しました。最初からやり直してください'
         render "signup/profile"
       end
     else
+      flash.now[:alert] = 'エラーが発生しました。最初からやり直してください'
       render "signup/profile"
     end
 
@@ -85,6 +88,18 @@ class SignupController < ApplicationController
     if year != 0 && month != 0 && day != 0
       return Date.new(year, month, day)
     end
+  end
+
+  def setting_default_yardstick
+    @yardstick = Yardstick.new(
+      sleep: "睡眠時間。7時間〜9時間：２Opt、6時間〜7時間：１pt、それ以外：０pt",
+      study: "課外、自主学習。1時間〜：２pt、30分〜：１pt、それ以下：０pt",
+      exercise: "散歩以上の負荷の運動。1時間〜：２pt、30分〜：１pt、それ以下：０pt",
+      diet: "食生活。野菜の摂取、脂質の制限でそれぞれ１pt。",
+      habit: "嗜好品、悪癖への対処。禁煙、禁酒でそれぞれ１pt。",
+      aim: "その他の日次目標。趣味や家事などの取り組みへの満足度で各自採点してください。",
+      user_id: current_user.id
+    )
   end
 
 end

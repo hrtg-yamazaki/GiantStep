@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_one :status, dependent: :destroy
+  has_one :yardstick, dependent: :destroy
   has_many :records, dependent: :destroy
 
   # Include default devise modules. Others available are:
