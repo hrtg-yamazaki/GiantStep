@@ -92,7 +92,7 @@ class SignupController < ApplicationController
 
   def setting_default_yardstick
     @yardstick = Yardstick.new(
-      sleep: "睡眠時間。7時間〜9時間：２Opt、6時間〜7時間：１pt、それ以外：０pt",
+      sleep: "睡眠時間。7時間〜9時間：２pt、6時間〜7時間：１pt、それ以外：０pt",
       study: "課外、自主学習。1時間〜：２pt、30分〜：１pt、それ以下：０pt",
       exercise: "散歩以上の負荷の運動。1時間〜：２pt、30分〜：１pt、それ以下：０pt",
       diet: "食生活。野菜の摂取、脂質の制限でそれぞれ１pt。",

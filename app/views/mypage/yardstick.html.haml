@@ -1,0 +1,26 @@
+.container
+  .wrapper
+    %h1 記録入力ページ
+    = form_for @yardstick, url: yardstick_update_mypage_index_path, method: :patch do |f|
+      
+      .yardstick-field
+        = f.label :sleep
+        = f.text_area :sleep
+      .yardstick-field
+        = f.label :study
+        = f.text_area :study
+      .yardstick-field
+        = f.label :exercise
+        = f.text_area :exercise
+      .yardstick-field
+        = f.label :diet
+        = f.text_area :diet
+      .yardstick-field
+        = f.label :habit
+        = f.text_area :habit
+      .yardstick-field
+        = f.label :aim
+        = f.text_area :aim
+
+      .yardstick-submit
+        = f.submit "登録"

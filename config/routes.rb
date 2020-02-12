@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   resources :giantstep, only: :index
 
-  resources :mypage, only: :index
+  resources :mypage, only: :index do
+    collection do
+      get "profile"
+      get "yardstick"
+      patch "yardstick_update"
+    end
+  end
 
   resources :signup, only: :index do
     collection do
