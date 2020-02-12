@@ -5,22 +5,34 @@
       
       .record-field
         = f.label :sleep
-        = f.select :sleep, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+        %br/
+        %p=@yardstick.sleep
+        = f.select :sleep, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
       .record-field
         = f.label :study
-        = f.select :study, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+        %br/
+        %p=@yardstick.study
+        = f.select :study, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
       .record-field
         = f.label :exercise
-        = f.select :exercise, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+        %br/
+        %p=@yardstick.exercise
+        = f.select :exercise, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
       .record-field
         = f.label :diet
-        = f.select :diet, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+        %br/
+        %p=@yardstick.diet
+        = f.select :diet, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
       .record-field
         = f.label :habit
-        = f.select :habit, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+        %br/
+        %p=@yardstick.habit
+        = f.select :habit, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
       .record-field
         = f.label :aim
-        = f.select :aim, options_for_select({ "できなかった": 0, "少しできた": 1, "良く出来た": 2 })
+        %br/
+        %p=@yardstick.aim
+        = f.select :aim, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
 
       .record-submit
         = f.submit "登録"

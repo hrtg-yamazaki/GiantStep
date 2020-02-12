@@ -15,6 +15,7 @@ class RecordsController < ApplicationController
 
   def new
     @record = Record.new
+    @yardstick = current_user.yardstick
   end
 
 
