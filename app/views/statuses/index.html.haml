@@ -1,6 +1,11 @@
 .container
   .wrapper
-    %p 登録済みのデータが反映されない方は以下の再計算ボタンを押してください
-    = link_to '再計算', calculate_statuses_path(@status), method: :patch
-    %p 本日の登録がお済みで無い方は以下のボタンより登録へお進みください
-    = link_to '登録', new_record_path
+    .record-contents
+      .record-contents__main
+        .record-contents__main__box
+          %h1.completed-message 登録済みのデータが反映されない方は以下の再計算ボタンを押してください
+          = link_to '再計算', redirecting_records_path, class: "record-contents__main__box--button"
+          %h1.completed-message 本日の登録がお済みで無い方は以下のボタンより登録へお進みください
+          = link_to '登録', new_record_path, class: "record-contents__main__box--button"
+          %br/
+          %br/
