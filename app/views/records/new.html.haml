@@ -1,9 +1,9 @@
 .container
   .wrapper
-    .record-contents
-      .record-contents__head
+    .single-contents
+      .single-contents__head
         %h1.record-contents__head__text データ登録
-      .record-contents__main
+      .single-contents__main
         = form_for @record, url: records_path, method: :post, html: {class: "record-form"} do |f|
           .record-field.top-field
             = f.label :sleep, class:"record-field__label"

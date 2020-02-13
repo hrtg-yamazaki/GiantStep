@@ -6,7 +6,7 @@
           %h2.accounts-head 新規登録
         .accounts-wrapper__box__content
           = form_for @user, url: keep_signup_index_path, html: {class: 'accounts-form'}, method: :post do |f|
-            = render partial: "error_messages", locals: { model: @user }
+            = render partial: "shared/error_messages", locals: { model: @user }
             .accounts-field
               = f.label :email, class: 'accounts-label'
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'accounts-input'

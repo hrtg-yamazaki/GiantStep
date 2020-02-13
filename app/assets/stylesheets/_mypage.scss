@@ -80,10 +80,14 @@
 
 .emphasized-interface-crimson{
   background-color: $ruby-crimson;
+  border: 1px solid #333;
+  border-radius: 4px;
 }
 
 .emphasized-interface-blue{
   background-color: steelblue;
+  border: 1px solid #333;
+  border-radius: 4px;
 }
 
 .recalculate{

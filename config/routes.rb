@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :mypage, only: :index do
     collection do
       get "profile"
+      get "profile_edit"
+      patch "profile_update"
       get "yardstick"
       patch "yardstick_update"
       get "report"

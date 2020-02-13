@@ -1,0 +1,20 @@
+.container
+  .wrapper
+    .accounts-wrapper
+      .accounts-wrapper__box
+        .accounts-wrapper__box__head
+          %h2.accounts-head プロフィール編集
+        .accounts-wrapper__box__content
+          = form_for @user, url: profile_update_mypage_index_path, html: {class: 'accounts-form'}, method: :patch do |f|
+            = render partial: "shared/error_messages", locals: { model: @user }
+            .accounts-field
+              = f.label :nickname, class: 'accounts-label'
+              = f.text_field :nickname, autofocus: true, class: 'accounts-input'
+            .accounts-field
+              = f.label :gender, class: 'accounts-label'
+              = f.select :gender, User.genders_i18n.invert, autofucus: true
+            .accounts-field
+              = f.label :profile, class: 'accounts-label'
+              = f.text_area :profile, rows: "6", autofocus: true, class: 'accounts-textarea'
+            .accounts-actions
+              = f.submit "登録", class: 'accounts-submit'

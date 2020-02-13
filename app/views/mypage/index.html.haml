@@ -56,39 +56,11 @@
                 %li.mypage-interface__box__content 嗜好
                 %li.mypage-interface__box__content 目標
                 %li.mypage-interface__box__content.emphasized-interface-blue
-                  =link_to '再計算', statuses_path, class: 'recalculate'
+                  =link_to 'データ反映', statuses_path, class: 'recalculate'
           
 
         .mypage-contents__main__right
-          .mypage-right
-            .mypage-right__content
-              .mypage-profile
-                .mypage-profile__thumbnail
-                  %p.no-image No image
-                .mypage-profile__name
-                  %h4.mypage-profile__name__text
-                    %span.bold-weight=@status.user.nickname
-                    %span さん
-                .mypage-profile__level
-                  %h4.mypage-profile__level__text
-                    %span Lv. 
-                    %span.bold-weight XXX
-                .mypage-profile__sheet
-                  %table.cumulative-sheet
-                    %thead.cumulative-sheet__head
-                      %tr.cumulative-sheet__head__row
-                        %th.cumulative-sheet__head__row--left{colspan: "2"} 利用状況
-                        -# %th.cumulative-sheet__head__row--right .
-                    %tbody.cumulative-sheet__body
-                      %tr.cumulative-sheet__body__row
-                        %td.cumulative-sheet__body__row--left 合計日数
-                        %td.cumulative-sheet__body__row--right=@status.login
-                      %tr.cumulative-sheet__body__row
-                        %td.cumulative-sheet__body__row--left 継続日数
-                        %td.cumulative-sheet__body__row--right (準備中)
-                      %tr.cumulative-sheet__body__row
-                        %td.cumulative-sheet__body__row--left 利用開始日
-                        %td.cumulative-sheet__body__row--right=@status.user.created_at.strftime("%Y/%m/%d")
+          = render 'shared/right_bar'
 
 
 -# 以下、後ほどjs実装後に使う素材

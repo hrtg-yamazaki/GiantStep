@@ -1,5 +1,19 @@
 .container
   .wrapper
-    %h1 ユーザー情報の編集
-    = link_to 'レコードメッセージの更新', yardstick_mypage_index_path
-    = link_to "不具合の報告", report_mypage_index_path
+    .mypage-contents
+      .mypage-contents__head
+        %h2.mypage-contents__head__text 各種設定
+      .mypage-contents__main.clearfix
+        .mypage-contents__main__left
+          .mypage-left
+            .mypage-left__content
+              - if flash[:notice]
+                %p=flash[:notice]
+              %br/
+              = link_to "ユーザー情報の編集", profile_edit_mypage_index_path
+              %br/
+              = link_to 'レコードメッセージの更新', yardstick_mypage_index_path
+              %br/
+              = link_to "不具合の報告", report_mypage_index_path
+        .mypage-contents__main__right
+          = render 'shared/right_bar'
