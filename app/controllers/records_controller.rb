@@ -23,7 +23,7 @@ class RecordsController < ApplicationController
 
     @record = Record.new(record_params)
 
-    if @record.valid?
+    if @record.valid?(:record_create)
       if @record.save
         redirect_to redirecting_records_path
       else

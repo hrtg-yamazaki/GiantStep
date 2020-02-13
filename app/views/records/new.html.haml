@@ -5,6 +5,7 @@
         %h1.single-contents__head__text データ登録
       .single-contents__main
         = form_for @record, url: records_path, method: :post, html: {class: "record-form"} do |f|
+          = render partial: "shared/error_messages", locals: { model: @record }
           .record-field.top-field
             = f.label :sleep, class:"record-field__label"
             %p.record-field__yardstick=@yardstick.sleep

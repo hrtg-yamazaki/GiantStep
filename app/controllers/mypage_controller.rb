@@ -23,7 +23,7 @@ class MypageController < ApplicationController
     @user.nickname = user_update_params[:nickname]
     @user.gender = user_update_params[:gender]
     @user.profile = user_update_params[:profile]
-    if @user.valid?
+    if @user.valid?(:profile_update)
       if @user.save
         flash[:notice] = "ユーザー情報を編集しました"
         redirect_to profile_mypage_index_path
@@ -42,12 +42,28 @@ class MypageController < ApplicationController
 
   def yardstick_update
     @yardstick = current_user.yardstick
-    if @yardstick.update(yardstick_params)
-      redirect_to mypage_index_path
+
+    @yardstick.sleep = yardstick_params[:sleep]
+    @yardstick.study = yardstick_params[:study]
+    @yardstick.exercise = yardstick_params[:exercise]
+    @yardstick.diet = yardstick_params[:diet]
+    @yardstick.habit = yardstick_params[:habit]
+    @yardstick.aim = yardstick_params[:aim]
+
+    if @yardstick.valid?(:yardstick_update)
+      if @yardstick.save
+        flash[:notice] = "編集は正常に完了しました"
+        redirect_to profile_mypage_index_path
+      else
+        flash.now[:alert] = "正常に登録できませんでした"
+        render 'mypage/yardstick'
+      end
     else
+      binding.pry
       flash.now[:alert] = "正常に登録できませんでした"
       render 'mypage/yardstick'
     end
+    
   end
 
 
@@ -59,7 +75,7 @@ class MypageController < ApplicationController
   def logout_confirm
 
   end
-  
+
 
   private
 

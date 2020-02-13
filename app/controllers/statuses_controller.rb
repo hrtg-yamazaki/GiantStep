@@ -29,7 +29,7 @@ class StatusesController < ApplicationController
       @status.login += record.login
     end
 
-    if @status.valid?
+    if @status.valid?(:calculate)
       if @status.save
         redirect_to mypage_index_path 
       else

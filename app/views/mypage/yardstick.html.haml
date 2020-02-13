@@ -5,7 +5,7 @@
         %h1.single-contents__head__text 基準編集
       .single-contents__main
         = form_for @yardstick, url: yardstick_update_mypage_index_path, method: :patch, html: {class: "yardstick-form"} do |f|
-          
+          = render partial: "shared/error_messages", locals: { model: @yardstick }
           .yardstick-field.top-field
             = f.label :sleep, class: "yardstick-field__label"
             .yardstick-field__textarea
