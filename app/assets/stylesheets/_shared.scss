@@ -15,11 +15,9 @@
     height: 100%;
     margin: 0 auto;
     &__left{
-      width: 80%;
       float: left;
     }
     &__right{
-      width: 20%;
       float: right;
     }
   }
@@ -30,7 +28,7 @@
   font-size: 26px;
   letter-spacing: 1px;
   color: whitesmoke;
-  padding-left: 10%;
+  margin-left: 40%;
 }
 
 .header-menu{
@@ -38,7 +36,7 @@
   font-size: 30px;
   text-align: right;
   color: whitesmoke;
-  padding-right: 40%;
+  margin-right: 30px;
   &__close{
     display: none;
     cursor: pointer;
@@ -51,7 +49,23 @@
 
 .header-lists{
   display: none;
+  background-color: whitesmoke;
+  border: $default-border;
+  width: 100px;
+  &__link{
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: $default-border;
+    font-size: 14px;
+  }
+  &__link:hover{
+    background-color: steelblue;
+    color: whitesmoke;
+  }
 }
+
+
 
 // *** フッター *** //
 
