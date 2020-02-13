@@ -1,7 +1,120 @@
 @import "config";
 
-.redirect-to-calculate{
+.record-contents{
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  &__head{
+    width: 280px;
+    padding: 5px 0;
+    margin: 0 auto;
+    box-shadow: $default-shadow;
+    background-color: #333;
+    &__text{
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: whitesmoke;
+    }
+  }
+  &__main{
+    margin-top: 20px;
+    box-shadow: $default-shadow;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    &__box{
+      text-align: center;
+      width: 100%;
+      &--button{
+        display: inline-block;
+        padding: 10px 35px;
+        text-align: center;
+        background-color: steelblue;
+        color: whitesmoke;
+        border: 1px solid steelblue;
+      }
+      &--button:hover{
+        background-color: whitesmoke;
+        border: 1px solid steelblue;
+        color: steelblue;
+      }
+    }
+  }
+}
 
-  display: none;
+.record-form{
+  margin: 0 auto;
+  padding: 10px;
+}
 
+.top-field{
+  border-top: $default-border;
+}
+
+.record-field{
+  padding: 30px 10px;
+  border-bottom: $default-border;
+  &__label{
+    display: block;
+    text-align: center;
+    border-bottom: 1px dashed lightgray;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+  }
+  &__yardstick{
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  &__select{
+    padding: 5px 10px;
+    text-align: center;
+    select{
+      padding: 5px 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+.record-submit{
+  padding: 30px 10px;
+  width: 100%;
+  text-align: center;
+  &__button{
+    display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    background-color: steelblue;
+    color: whitesmoke;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  &__button:hover{
+    background-color: whitesmoke;
+    border: 1px solid steelblue;
+    color: steelblue;
+  }
+}
+
+.completed-message{
+  display: block;
+  padding: 30px 0;
+  font-size: 16px;
+}
+
+.redirecting-content{
+  padding-top: 100px;
+  width: 100%;
+  &__box{
+    text-align: center;
+    width: 100%;
+    p{
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
 }

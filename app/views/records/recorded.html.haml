@@ -1,6 +1,9 @@
 .container
   .wrapper
-    %h1 本日の登録は終了しています。
-    = link_to 'マイページへ戻る', mypage_index_path
-    %br/
-    = link_to '登録済みのデータが反映されない方はこちらをクリックしてください', calculate_statuses_path(@status), method: :patch
+    .record-contents
+      .record-contents__main
+        .record-contents__main__box
+          %h1.completed-message 本日の登録は終了しています。
+          = link_to 'マイページへ戻る', mypage_index_path, class: "record-contents__main__box--button"
+          %br/
+          = link_to '登録済みのデータが反映されない方はこちらをクリックしてください', redirecting_records_path, class: "completed-message"

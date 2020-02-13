@@ -1,4 +1,8 @@
 .container
   .wrapper
-    %h1 記録開始ページ
-    = link_to '記録開始', new_record_path
+    .record-contents
+      .record-contents__head
+        %h1.record-contents__head__text データ登録
+      .record-contents__main
+        .record-contents__main__box
+          = link_to '本日の登録を開始する', new_record_path, class: "record-contents__main__box--button"

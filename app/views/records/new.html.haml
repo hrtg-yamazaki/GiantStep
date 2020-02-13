@@ -1,38 +1,41 @@
 .container
   .wrapper
-    %h1 記録入力ページ
-    = form_for @record, url: records_path, method: :post do |f|
-      
-      .record-field
-        = f.label :sleep
-        %br/
-        %p=@yardstick.sleep
-        = f.select :sleep, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
-      .record-field
-        = f.label :study
-        %br/
-        %p=@yardstick.study
-        = f.select :study, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
-      .record-field
-        = f.label :exercise
-        %br/
-        %p=@yardstick.exercise
-        = f.select :exercise, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
-      .record-field
-        = f.label :diet
-        %br/
-        %p=@yardstick.diet
-        = f.select :diet, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
-      .record-field
-        = f.label :habit
-        %br/
-        %p=@yardstick.habit
-        = f.select :habit, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
-      .record-field
-        = f.label :aim
-        %br/
-        %p=@yardstick.aim
-        = f.select :aim, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+    .record-contents
+      .record-contents__head
+        %h1.record-contents__head__text データ登録
+      .record-contents__main
+        = form_for @record, url: records_path, method: :post, html: {class: "record-form"} do |f|
+          .record-field.top-field
+            = f.label :sleep, class:"record-field__label"
+            %p.record-field__yardstick=@yardstick.sleep
+            .record-field__select
+              = f.select :sleep, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+          .record-field
+            = f.label :study, class:"record-field__label"
+            %p.record-field__yardstick=@yardstick.study
+            .record-field__select
+              = f.select :study, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+          .record-field
+            = f.label :exercise, class:"record-field__label"
+            %p.record-field__yardstick=@yardstick.exercise
+            .record-field__select
+              = f.select :exercise, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+          .record-field
+            = f.label :diet, class:"record-field__label"
+            %p.record-field__yardstick=@yardstick.diet
+            .record-field__select
+              = f.select :diet, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+          .record-field
+            = f.label :habit, class:"record-field__label"
+            %p.record-field__yardstick=@yardstick.habit
+            .record-field__select
+              = f.select :habit, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+          .record-field
+            = f.label :aim, class:"record-field__label"
+            %p.record-field__yardstick=@yardstick.aim
+            .record-field__select
+              = f.select :aim, options_for_select({ "０": 0, "１pt": 1, "２pt": 2 })
+          
+          .record-submit
+            = f.submit "確認して登録", class: "record-submit__button"
 
-      .record-submit
-        = f.submit "登録"

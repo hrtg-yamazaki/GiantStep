@@ -1,4 +1,9 @@
 .container
   .wrapper
-    %h1 ステータス情報を更新しています...
-    = link_to ' ', calculate_statuses_path(@status), method: :patch, id: "redirect-to-calculate"
+    .redirecting-content
+      .redirecting-content__box
+        %p Now Loading...
+        %br/
+        %p ステータス情報を更新しています...
+        %br/
+        = link_to '画面が自動で遷移しない場合はこちらをクリックしてください', calculate_statuses_path(@status), method: :patch, id: "redirect-to-calculate"
