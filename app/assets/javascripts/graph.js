@@ -1,6 +1,6 @@
-$(document).on('turbolinks:load', function(){
+if (location.href.match(/\/mypage/)) {
 
-  if (location.href.match(/\/mypage/)) {
+  if (!location.href.match(/\/mypage\/[0-9a-zA-Z]+$/)){
 
     $(function(){
 
@@ -71,6 +71,5 @@ $(document).on('turbolinks:load', function(){
         }
       });
     })
-
-  };
-})
+  }
+};
