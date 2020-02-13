@@ -1,0 +1,8 @@
+.container
+  .wrapper
+    .single-contents
+      .single-contents__main
+        .single-contents__main__box
+          %h1.completed-message ログアウトしてよろしいですか？
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "single-contents__main__box--button"
+          %br/

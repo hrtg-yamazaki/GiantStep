@@ -1,6 +1,8 @@
 @import 'config';
 
 
+// ***** mypageTOP ***** //
+
 .mypage-contents{
   padding: 10px;
   &__head{
@@ -192,6 +194,85 @@
         padding: 5px;
         border: $default-border;
       }
+    }
+  }
+}
+
+// ***** yardstick ***** //
+
+.yardstick-form{
+  width: 100%;
+  padding: 10px;
+}
+
+.top-field{
+  border-top: $default-border;
+}
+
+.yardstick-field{
+  padding: 30px 10px;
+  border-bottom: $default-border;
+  &__label{
+    display: block;
+    text-align: center;
+    border-bottom: 1px dashed lightgray;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+  }
+  &__textarea{
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    &__area{
+      -webkit-appearance: none;
+      resize: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: none;
+      border: 1px solid lightgray;
+    }
+  }
+}
+
+.yardstick-submit{
+  padding: 30px 10px;
+  width: 100%;
+  text-align: center;
+  &__button{
+    display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    background-color: steelblue;
+    color: whitesmoke;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  &__button:hover{
+    background-color: whitesmoke;
+    border: 1px solid steelblue;
+    color: steelblue;
+  }
+}
+
+// ***** profile ***** //
+
+.mypage-menu{
+  padding: 10px;
+  &__content{
+    padding: 10px 0;
+    &__head{
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: $default-border;
+      margin-bottom: 20px;
+    }
+    &__link{
+      display: block;
+      padding-bottom: 10px;
+      font-size: 14px;
     }
   }
 }

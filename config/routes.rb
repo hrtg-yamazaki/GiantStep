@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get "yardstick"
       patch "yardstick_update"
       get "report"
+      get "logout_confirm"
     end
   end
 

@@ -56,6 +56,11 @@ class MypageController < ApplicationController
   end
 
 
+  def logout_confirm
+
+  end
+  
+
   private
 
   def redirect_to_toppage

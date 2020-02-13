@@ -52,6 +52,13 @@ ja:
         habit: 悪癖、嗜好
         aim: その他の目標
         login: ログイン
+      yardstick:
+        sleep: 睡眠
+        study: 勉強
+        exercise: 運動
+        diet: 食事
+        habit: 悪癖、嗜好
+        aim: その他の目標
     models:
       user: ユーザ
   devise:

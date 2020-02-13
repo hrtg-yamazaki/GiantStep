@@ -2,7 +2,7 @@
   .wrapper
     .single-contents
       .single-contents__head
-        %h1.record-contents__head__text データ登録
+        %h1.single-contents__head__text データ登録
       .single-contents__main
         = form_for @record, url: records_path, method: :post, html: {class: "record-form"} do |f|
           .record-field.top-field

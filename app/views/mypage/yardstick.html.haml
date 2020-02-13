@@ -1,26 +1,35 @@
 .container
   .wrapper
-    %h1 記録入力ページ
-    = form_for @yardstick, url: yardstick_update_mypage_index_path, method: :patch do |f|
-      
-      .yardstick-field
-        = f.label :sleep
-        = f.text_area :sleep
-      .yardstick-field
-        = f.label :study
-        = f.text_area :study
-      .yardstick-field
-        = f.label :exercise
-        = f.text_area :exercise
-      .yardstick-field
-        = f.label :diet
-        = f.text_area :diet
-      .yardstick-field
-        = f.label :habit
-        = f.text_area :habit
-      .yardstick-field
-        = f.label :aim
-        = f.text_area :aim
+    .single-contents
+      .single-contents__head
+        %h1.single-contents__head__text 基準編集
+      .single-contents__main
+        = form_for @yardstick, url: yardstick_update_mypage_index_path, method: :patch, html: {class: "yardstick-form"} do |f|
+          
+          .yardstick-field.top-field
+            = f.label :sleep, class: "yardstick-field__label"
+            .yardstick-field__textarea
+              = f.text_area :sleep, class: "yardstick-field__textarea__area"
+          .yardstick-field
+            = f.label :study, class: "yardstick-field__label"
+            .yardstick-field__textarea
+              = f.text_area :study, class: "yardstick-field__textarea__area"
+          .yardstick-field
+            = f.label :exercise, class: "yardstick-field__label"
+            .yardstick-field__textarea
+              = f.text_area :exercise, class: "yardstick-field__textarea__area"
+          .yardstick-field
+            = f.label :diet, class: "yardstick-field__label"
+            .yardstick-field__textarea
+              = f.text_area :diet, class: "yardstick-field__textarea__area"
+          .yardstick-field
+            = f.label :habit, class: "yardstick-field__label"
+            .yardstick-field__textarea
+              = f.text_area :habit, class: "yardstick-field__textarea__area"
+          .yardstick-field
+            = f.label :aim, class: "yardstick-field__label"
+            .yardstick-field__textarea
+              = f.text_area :aim, class: "yardstick-field__textarea__area"
 
-      .yardstick-submit
-        = f.submit "登録"
+          .yardstick-submit
+            = f.submit "登録", class: "yardstick-submit__button"
