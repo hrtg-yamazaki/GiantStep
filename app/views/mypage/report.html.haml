@@ -1,0 +1,6 @@
+.container
+  .wrapper
+    %h1 エラーメッセージ表示ページ
+    - if flash.now[:alert]
+      %p=flash.now[:alert]
+    = mail_to ENV["EMAIL_FOR_REPORT"], "不具合をメールにてご報告ください"

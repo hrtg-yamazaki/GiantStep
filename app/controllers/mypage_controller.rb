@@ -22,8 +22,14 @@ class MypageController < ApplicationController
     if @yardstick.update(yardstick_params)
       redirect_to mypage_index_path
     else
+      flash.now[:alert] = "正常に登録できませんでした"
       render 'mypage/yardstick'
     end
+  end
+
+
+  def error
+
   end
 
 
