@@ -1,6 +1,6 @@
-if (location.href.match(/\/mypage/)) {
+if ((location.href.match(/\/mypage/)) || (location.href.match(/\/users\/\d+/))) {
 
-  if (!location.href.match(/\/mypage\/[0-9a-zA-Z]+$/)){
+  if (!location.href.match(/\/mypage\/[0-9a-zA-Z]+/)){
 
     $(function(){
 

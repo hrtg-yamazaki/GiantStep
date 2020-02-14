@@ -1,0 +1,19 @@
+.container
+  .wrapper
+    .single-contents
+      .single-contents__main
+        .single-contents__main__box
+          %h1.completed-message 他のユーザーのデータを見てみよう！
+          = form_tag( users_path, method: :get, class: "accounts-form" ) do
+            .accounts_field
+              = text_field_tag :keyword, params[:keyword], { placeholder: "検索する", class: "accounts-field__input" }
+              = submit_tag "検索", name: nil
+          %br/
+          %br/
+          - if @users
+            - @users.each do |user|
+              = link_to user.nickname + "さん", user_path(user)
+
+
+
+

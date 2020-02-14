@@ -1,0 +1,65 @@
+= render 'shared/hidden'
+  
+.container
+  .wrapper
+    .mypage-contents
+      .mypage-contents__head
+        %h2.mypage-contents__head__text<
+          =@user.nickname
+          さん
+      
+      .mypage-contents__main.clearfix
+        .mypage-contents__main__left
+          .mypage-left
+            .mypage-left__content.clearfix
+              .mypage-left__content__chart
+                .cumulative-chart
+                  %canvas#cumulative-radar.cumulative-chart__rader{style: 'height:100%; width: 100%;'}
+              .mypage-left__content__sheet
+                %table.cumulative-sheet
+                  %thead.cumulative-sheet__head
+                    %tr.cumulative-sheet__head__row
+                      %th.cumulative-sheet__head__row--left{colspan: "2"} 累計実績
+                  %tbody.cumulative-sheet__body
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 合計Pt.
+                      %td.cumulative-sheet__body__row--right=Status.total_point(@status)
+                %table.cumulative-sheet
+                  %thead.cumulative-sheet__head
+                    %tr.cumulative-sheet__head__row
+                      %th.cumulative-sheet__head__row--left{colspan: "2"} 累計実績 ( 科目別 ) 
+                  %tbody.cumulative-sheet__body
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 睡眠
+                      %td.cumulative-sheet__body__row--right=@status.sleep
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 自主学習
+                      %td.cumulative-sheet__body__row--right=@status.study
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 運動
+                      %td.cumulative-sheet__body__row--right=@status.exercise
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 食習慣
+                      %td.cumulative-sheet__body__row--right=@status.diet
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 嗜好品
+                      %td.cumulative-sheet__body__row--right=@status.habit
+                    %tr.cumulative-sheet__body__row
+                      %td.cumulative-sheet__body__row--left 目標達成
+                      %td.cumulative-sheet__body__row--right=@status.aim
+
+            .mypage-interface
+              %ul.mypage-interface__box
+                %li.mypage-interface__box__content.emphasized-interface-crimson 総合
+                %li.mypage-interface__box__content 睡眠
+                %li.mypage-interface__box__content 学習
+                %li.mypage-interface__box__content 運動
+                %li.mypage-interface__box__content 食事
+                %li.mypage-interface__box__content 嗜好
+                %li.mypage-interface__box__content 目標
+                %li.mypage-interface__box__content.emphasized-interface-blue
+                  =link_to 'データ更新', statuses_path, class: 'recalculate'
+          
+
+        .mypage-contents__main__right
+          = render 'shared/right_bar'
