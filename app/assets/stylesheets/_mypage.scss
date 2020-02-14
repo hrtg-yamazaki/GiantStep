@@ -110,27 +110,50 @@
 
 .mypage-profile{
   padding: 20px 0;
-  &__thumbnail{
-    height: 200px;
-    width: 200px;
-    margin: 0 auto;
-    background-color: silver;
-    border: 1px solid steelblue;
-    display: flex;
-    align-items: center;
-  }
+  // &__thumbnail{
+  //   height: 200px;
+  //   width: 200px;
+  //   margin: 0 auto;
+  //   background-color: silver;
+  //   border: 1px solid steelblue;
+  //   display: flex;
+  //   align-items: center;
+  // }
   &__name{
     padding: 10px 0;
+    border-top: $default-border;
     border-bottom: $default-border;
     &__text{
       text-align: center;
     }
   }
+  &__profile{
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: $default-border;
+    &__head{
+      font-weight: bold;
+    }
+    &__text{
+      padding: 5px;
+      min-height: 100px;
+    }
+  }
   &__level{
     padding: 10px 0;
     border-bottom: $default-border;
+    font-size: 14px;
     &__text{
       text-align: center;
+    }
+  }
+  &__gender{
+    padding: 10px;
+    border-bottom: $default-border;
+    text-align: center;
+    &__text{
+      font-size: 14px;
+      padding: 5px;
     }
   }
   &__sheet{

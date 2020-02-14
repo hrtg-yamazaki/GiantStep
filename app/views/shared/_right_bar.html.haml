@@ -1,8 +1,8 @@
 .mypage-right
   .mypage-right__content
     .mypage-profile
-      .mypage-profile__thumbnail
-        %p.no-image No image
+      -# .mypage-profile__thumbnail
+        -# %p.no-image No image
       .mypage-profile__name
         %h4.mypage-profile__name__text
           %span.bold-weight=@status.user.nickname
@@ -10,7 +10,13 @@
       .mypage-profile__level
         %h4.mypage-profile__level__text
           %span Lv. 
-          %span.bold-weight XXX
+          %span.bold-weight (近日実装予定)
+      .mypage-profile__gender<
+        %span.mypage-profile__gender__text 性別：
+        %span.mypage-profile__gender__text.bold-weight=@status.user.gender_i18n
+      .mypage-profile__profile
+        %h4.mypage-profile__profile__head 自己紹介：
+        %p.mypage-profile__profile__text=@status.user.profile
       .mypage-profile__sheet
         %table.cumulative-sheet
           %thead.cumulative-sheet__head

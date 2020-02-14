@@ -8,11 +8,15 @@
             .accounts_field
               = text_field_tag :keyword, params[:keyword], { placeholder: "検索する", class: "accounts-field__input" }
               = submit_tag "検索", name: nil
+              = link_to 'クリア', users_path
           %br/
           %br/
           - if @users
             - @users.each do |user|
               = link_to user.nickname + "さん", user_path(user)
+          %br/
+          %br/
+
 
 
 

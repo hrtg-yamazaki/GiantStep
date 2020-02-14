@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def show
 
     @user = User.find(params[:id])
-    if @user = current_user
+    if @user == current_user
       redirect_to mypage_index_path
     end
     @status = @user.status
