@@ -5,9 +5,9 @@ class User < ApplicationRecord
   has_many :records, dependent: :destroy
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :validatable and :omniauthable
+  # :confirmable, :lockable, :timeoutable, :validatable, :trackable, and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable
+         :recoverable, :rememberable
 
   VALID_EMAIL_REGIX    = /\A[^@\s]+@[^@\s]+\z/
   VALID_PASSWORD_REGIX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
