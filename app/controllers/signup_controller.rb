@@ -37,6 +37,7 @@ class SignupController < ApplicationController
       email: session[:email],
       password: session[:password],
       password_confirmation: session[:password_confirmation],
+      privacy: user_params[:privacy],
       nickname: user_params[:nickname],
       gender: user_params[:gender],
       birthday: convert_params_into_date,
@@ -76,7 +77,7 @@ class SignupController < ApplicationController
   def user_params
     params.require(:user).permit(
       :email, :password, :password_confirmation,
-      :nickname, :gender, :profile, :birthday
+      :privacy, :nickname, :gender, :profile, :birthday
     )
   end
 

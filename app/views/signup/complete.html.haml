@@ -1,4 +1,13 @@
 .container
   .wrapper
-    %h1 プロフィール登録完了！
-    = link_to 'ログアウト', destroy_user_session_path, method: :delete
+    .single-contents
+      .single-contents__main
+        .single-contents__main__box
+          %h1.completed-message プロフィールの登録が完了しました。
+          = link_to 'マイページへ', mypage_index_path, class: "single-contents__main__box--button"
+          %br/
+          %br/
+          = link_to '設定を変更する', profile_mypage_index_path, class: "single-contents__main__box--button"
+          %br/
+          %br/
+          

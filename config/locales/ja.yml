@@ -6,6 +6,9 @@ ja:
           not_public: '非公開'
           male: '男性'
           female: '女性'
+        privacy:
+          on_public: "公開"
+          on_private: '非公開'
   activerecord:
     attributes:
       status:
@@ -35,6 +38,7 @@ ja:
         nickname: ニックネーム
         password: パスワード
         password_confirmation: パスワード（確認用）
+        privacy: マイページ公開設定
         profile: 自己紹介
         remember_created_at: ログイン記憶時刻
         remember_me: ログインを記憶する

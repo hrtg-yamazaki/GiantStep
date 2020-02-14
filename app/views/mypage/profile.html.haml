@@ -7,7 +7,7 @@
         .mypage-contents__main__left
           .mypage-left
             .mypage-left__content
-              - if flash[:notice]
+              - if flash[:notice] && flash[:notice] == "ログアウトしました。"
                 .flash-message
                   %p.flash-message__text=flash[:notice]
               .mypage-menu

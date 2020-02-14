@@ -20,9 +20,12 @@ class MypageController < ApplicationController
 
   def profile_update
     @user = current_user
+
+    @user.privacy = user_update_params[:privacy]
     @user.nickname = user_update_params[:nickname]
     @user.gender = user_update_params[:gender]
     @user.profile = user_update_params[:profile]
+
     if @user.valid?(:profile_update)
       if @user.save
         flash[:notice] = "ユーザー情報を編集しました"
@@ -89,7 +92,7 @@ class MypageController < ApplicationController
 
   def user_update_params
     params.require(:user).permit(
-      :nickname, :gender, :profile
+      :privacy, :nickname, :gender, :profile
     )
   end
 
