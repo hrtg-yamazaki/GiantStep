@@ -40,44 +40,37 @@
     box-shadow: $default-shadow;
     background-color: whitesmoke;
     padding: 20px;
-    &__chart{
+    &--left{
       float: left;
-      width: 400px;
-      height: 330px;
+      width: 50%;
+      height: 300px;
     }
-    &__sheet{
+    &--right{
       float: right;
-      width: 199px;
+      width: 50%;
+      border-left: $default-border;
+      padding: 5px;
+      height: 300px;
     }
   }
 }
 
 .mypage-interface{
-  width: 100%;
-  margin-top: 30px;
-  box-shadow: $default-shadow;
+  padding: 5px;
   &__box{
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    border-collapse: collapse;
-    &__content{
-      height: 45px;
-      width: 25%;
-      line-height: 45px;
-      text-align: center;
-      font-size: 16px;
+    text-align: center;
+    padding-bottom: 20px;
+    &__recalc{
       color: whitesmoke;
-      background-color: #333;
-      border: 1px solid whitesmoke;
-      cursor: pointer;
-    }
-    &__content:hover{
-      background-color: whitesmoke;
-      color: steelblue;
+      background-color: steelblue;
+      padding: 15px 30px;
     }
   }
+}
+
+.mypage-calendar{
+  border-top: $default-border;
+  padding: 10px 5px;
 }
 
 .emphasized-interface-crimson{
@@ -99,6 +92,42 @@
   color: whitesmoke;
 }
 
+.mypage-sheet{
+  padding-top: 30px;
+  &__box{
+    padding: 5px;
+    box-shadow: $default-shadow;
+  }
+}
+
+.cumulative-sheet{
+  width: 100%;
+  border: $default-border;
+  border-collapse: collapse;
+  &__head{
+    background-color: #333;
+    color: whitesmoke;
+    &__row{
+      &--content{
+        width: 25%;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid whitesmoke;
+      }
+    }
+  }
+  &__body{
+    &__row{
+      &--content{
+        width: 25%;
+        text-align: center;
+        padding: 5px;
+        border: $default-border;
+      }
+    }
+  }
+}
+
 .mypage-right{
   min-height: 500px;
   &__content{
@@ -110,15 +139,16 @@
 
 .mypage-profile{
   padding: 20px 0;
-  // &__thumbnail{
-  //   height: 200px;
-  //   width: 200px;
-  //   margin: 0 auto;
-  //   background-color: silver;
-  //   border: 1px solid steelblue;
-  //   display: flex;
-  //   align-items: center;
-  // }
+  &__icon{
+    height: 180px;
+    width: 180px;
+    margin: 0 auto;
+    background-color: silver;
+    border: 1px solid steelblue;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   &__name{
     padding: 10px 0;
     border-top: $default-border;
@@ -162,6 +192,9 @@
   }
 }
 
+.half-row{
+  width: 50%;
+}
 
 .no-image{
   color: whitesmoke;
@@ -181,45 +214,7 @@
   width: 100%;
 }
 
-.cumulative-sheet{
-  width: 90%;
-  margin: 2.5% 5%;
-  border: $default-border;
-  border-collapse: collapse;
-  &__head{
-    background-color: #333;
-    color: whitesmoke;
-    &__row{
-      &--left{
-        width: 50%;
-        text-align: center;
-        padding: 5px;
-      }
-      &--right{
-        display: none;
-        width: 50%;
-        text-align: center;
-        padding: 5px;
-      }
-    }
-  }
-  &__body{
-    &__row{
-      &--left{
-        width: 50%;
-        text-align: center;
-        padding: 5px;
-        border: $default-border;
-      }
-      &--right{
-        width: 50%;
-        text-align: center;
-        padding: 5px;
-        border: $default-border;
-      }
-    }
-  }
-}
+
 
 // ***** yardstick ***** //
 
