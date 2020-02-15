@@ -123,9 +123,16 @@
         text-align: center;
         padding: 5px;
         border: $default-border;
+        font-weight: bold;
       }
     }
   }
+}
+
+.point-unit{
+  font-weight: normal;
+  padding-left: 5px;
+  font-size: 12px;
 }
 
 .mypage-right{

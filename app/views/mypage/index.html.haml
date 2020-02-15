@@ -32,22 +32,38 @@
                       %th.cumulative-sheet__head__row--content 勉強
                   %tbody.cumulative-sheet__body
                     %tr.cumulative-sheet__body__row
-                      %td.cumulative-sheet__body__row--content=Status.total_point(@status)
-                      %td.cumulative-sheet__body__row--content=@status.sleep
-                      %td.cumulative-sheet__body__row--content=@status.exercise
-                      %td.cumulative-sheet__body__row--content=@status.study
+                      %td.cumulative-sheet__body__row--content<
+                        =Status.total_point(@status)
+                        %span.point-unit pt.
+                      %td.cumulative-sheet__body__row--content<
+                        =@status.sleep
+                        %span.point-unit pt.
+                      %td.cumulative-sheet__body__row--content<
+                        =@status.exercise
+                        %span.point-unit pt.
+                      %td.cumulative-sheet__body__row--content<
+                        =@status.study
+                        %span.point-unit pt.
                   %thead.cumulative-sheet__head
                     %tr.cumulative-sheet__head__row
                       %th.cumulative-sheet__head__row--content 食事
-                      %th.cumulative-sheet__head__row--content 嗜好品
-                      %th.cumulative-sheet__head__row--content 目標達成
-                      %th.cumulative-sheet__head__row--content ログイン
+                      %th.cumulative-sheet__head__row--content 嗜好品対処
+                      %th.cumulative-sheet__head__row--content その他目標
+                      %th.cumulative-sheet__head__row--content ログイン日数
                   %tbody.cumulative-sheet__body
                     %tr.cumulative-sheet__body__row
-                      %td.cumulative-sheet__body__row--content=@status.diet
-                      %td.cumulative-sheet__body__row--content=@status.habit
-                      %td.cumulative-sheet__body__row--content=@status.aim
-                      %td.cumulative-sheet__body__row--content=@status.login
+                      %td.cumulative-sheet__body__row--content<
+                        =@status.diet
+                        %span.point-unit pt.
+                      %td.cumulative-sheet__body__row--content<
+                        =@status.habit
+                        %span.point-unit pt.
+                      %td.cumulative-sheet__body__row--content<
+                        =@status.aim
+                        %span.point-unit pt.
+                      %td.cumulative-sheet__body__row--content<
+                        %span=@status.login
+                        %span.point-unit 日
 
         .mypage-contents__main__right
           = render 'shared/right_bar'

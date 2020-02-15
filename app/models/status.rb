@@ -15,4 +15,27 @@ class Status < ApplicationRecord
     return total
   end
 
+  def self.level(status)
+    total = self.total_point(status)
+    level = 0
+    border = 0
+    while total >= border do
+      level += 1
+      border += level * 10
+    end
+    return level
+  end
+
+  def self.exp_for_level_up(status)
+    total = self.total_point(status)
+    level = self.level(status)
+    next_level = level + 1
+    next_border = 0
+    while level > 0 do
+      next_border +=  level * 10
+      level -= 1
+    end
+    return next_border - total
+  end
+
 end

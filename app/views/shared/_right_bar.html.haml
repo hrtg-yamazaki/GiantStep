@@ -10,7 +10,11 @@
       .mypage-profile__level
         %h4.mypage-profile__level__text
           %span Lv. 
-          %span.bold-weight (近日実装予定)
+          %span.bold-weight=Status.level(@status)
+        %h4.mypage-profile__level__text
+          %span.point-unit (次のレベルまで あと 
+          %span.point-unit=Status.exp_for_level_up(@status)
+          %span.point-unit )
       .mypage-profile__gender<
         %span.mypage-profile__gender__text 性別：
         %span.mypage-profile__gender__text.bold-weight=@status.user.gender_i18n
