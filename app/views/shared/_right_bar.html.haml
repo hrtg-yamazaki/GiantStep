@@ -8,10 +8,10 @@
           %span.bold-weight=@status.user.nickname
           %span さん
       .mypage-profile__level
-        %h4.mypage-profile__level__text
+        %h4.mypage-profile__level__text<
           %span Lv. 
           %span.bold-weight=Status.level(@status)
-        %h4.mypage-profile__level__text
+        %h4.mypage-profile__level__text<
           %span.point-unit (次のレベルまで あと 
           %span.point-unit=Status.exp_for_level_up(@status)
           %span.point-unit )
