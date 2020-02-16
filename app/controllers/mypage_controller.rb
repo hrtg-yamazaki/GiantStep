@@ -23,6 +23,7 @@ class MypageController < ApplicationController
 
     @user.privacy = user_update_params[:privacy]
     @user.nickname = user_update_params[:nickname]
+    @user.icon = user_update_params[:icon]
     @user.gender = user_update_params[:gender]
     @user.profile = user_update_params[:profile]
 
@@ -92,7 +93,7 @@ class MypageController < ApplicationController
 
   def user_update_params
     params.require(:user).permit(
-      :privacy, :nickname, :gender, :profile
+      :privacy, :nickname, :icon, :gender, :profile
     )
   end
 

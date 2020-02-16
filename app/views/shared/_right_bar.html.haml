@@ -2,7 +2,10 @@
   .mypage-right__content
     .mypage-profile
       .mypage-profile__icon
-        %p.no-image No image
+        -if @status.user.icon.present?
+          = image_tag @status.user.icon_url, class: "user-icon"
+        -else
+          %p.no-image No image
       .mypage-profile__name
         %h4.mypage-profile__name__text
           %span.bold-weight=@status.user.nickname

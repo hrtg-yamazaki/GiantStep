@@ -24,4 +24,6 @@ class User < ApplicationRecord
   enum gender: [ :not_public, :male, :female ]
   enum privacy: [ :on_public, :on_private ]
 
+  mount_uploader :icon, ImageUploader
+
 end

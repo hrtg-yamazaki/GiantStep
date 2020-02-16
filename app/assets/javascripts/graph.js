@@ -19,7 +19,7 @@ if ((location.href.match(/\/mypage/)) || (location.href.match(/\/users\/\d+/))) 
       var cumRadarChart = new Chart(context, {
         type: 'radar',
         data: {
-          labels: ['睡眠', '運動', '勉強', '食事', '悪癖', '目標'],
+          labels: ['睡眠', '勉強', '運動', '食事', '悪癖', '目標'],
           datasets: [{
             label: '累計実績',
             data: statusArray,
