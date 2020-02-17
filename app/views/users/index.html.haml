@@ -11,9 +11,12 @@
               = link_to 'クリア', users_path
           %br/
           %br/
-          - if @users
+          - if @users.present?
             - @users.each do |user|
               = link_to user.nickname + "さん", user_path(user)
+              %br/
+          - else
+            %p 該当するユーザーはいません
           %br/
           %br/
 

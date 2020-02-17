@@ -42,6 +42,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :show]
+  resources :users, only: :index do
+    collection do
+      get "sample_user"
+      post "login_as_sample"
+    end
+  end
+  resources :users, only: [:show]
+  
 
 end

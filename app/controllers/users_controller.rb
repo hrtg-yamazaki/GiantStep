@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :redirect_to_toppage
+  before_action :redirect_to_toppage, except: [:sample_user, :login_as_sample]
 
 
   def index
@@ -31,6 +31,21 @@ class UsersController < ApplicationController
   end
 
 
+  def sample_user
+
+  end
+
+
+  def login_as_sample
+
+    sample_user = User.find_by(email: "sample@giantstep.com")
+    session[:id] = sample_user.id
+    sign_in User.find(session[:id])
+    redirect_to mypage_index_path
+
+  end
+
+  
   private
 
   def redirect_to_toppage

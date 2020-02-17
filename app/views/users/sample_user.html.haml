@@ -1,0 +1,7 @@
+.container
+  .wrapper
+    .single-contents
+      .single-contents__main
+        .single-contents__main__box
+          %h1.completed-message サンプルユーザーでのログインを行いますか？
+          = link_to 'ログイン', login_as_sample_users_path, method: :post, class: "single-contents__main__box--button"
