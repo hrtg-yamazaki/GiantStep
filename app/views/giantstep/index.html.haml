@@ -1,9 +1,15 @@
 
 
 .container
-  .wrapper
-    .top-contents
-      .top-content
+  .top-content
+    .top-content__box
+      %h1.top-content__box__head Giantstepを利用する
+      .top-content__box__link
+        = link_to 'ログイン', new_user_session_path, class: 'top-link'
+        = link_to '新規登録', signup_index_path, class: 'top-link left-blank'
+        %br/
+        = link_to 'サンプルユーザーでログイン', sample_user_users_path, class: 'top-link'
+      %p.top-content__box__message 日々の生活習慣を記録し、モニタリングすることができるアプリケーションです。
 
-      
+  .introduction-content
 

@@ -1,10 +1,15 @@
 %footer.footer
   .footer__box
-    = link_to mypage_index_path, class: 'footer-content' do
-      = fa_icon 'home', class:'footer-content__icon'
-    = link_to records_path, class: 'footer-content side-serve' do
-      = fa_icon 'edit', class:'footer-content__icon'
-    = link_to users_path, class: 'footer-content side-serve' do
-      = fa_icon 'search', class:'footer-content__icon'
-    = link_to profile_mypage_index_path, class: 'footer-content side-serve' do
-      = fa_icon 'cog', class:'footer-content__icon'
+    - if user_signed_in?
+      = link_to mypage_index_path, class: 'footer-content' do
+        = fa_icon 'home', class:'footer-content__icon'
+      = link_to records_path, class: 'footer-content side-serve' do
+        = fa_icon 'edit', class:'footer-content__icon'
+      = link_to users_path, class: 'footer-content side-serve' do
+        = fa_icon 'search', class:'footer-content__icon'
+      = link_to profile_mypage_index_path, class: 'footer-content side-serve' do
+        = fa_icon 'cog', class:'footer-content__icon'
+    - else
+      .link-to-portfolio
+        = link_to "©︎ Hirotsugu Yamazaki", "https://hrtg-ymzk.herokuapp.com/", class: "link-to-portfolio__text"
+
