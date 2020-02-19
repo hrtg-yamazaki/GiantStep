@@ -51,9 +51,41 @@
   background-color: whitesmoke;
 }
 
-.introduction-content{
+.introduction{
   min-height: 35%;
   box-shadow: $default-shadow;
   background-color: whitesmoke;
+  &__box{
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 
+.introduction-content{
+  min-width: 280px;
+  padding: 10px;
+  margin: 0 auto;
+  &__image{
+    height: 180px;
+    width: 180px;
+    margin: 0 auto;
+    border: 1px solid navy;
+    background-size: cover;
+  }
+  &__message{
+    padding-top: 5px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.ss-record{
+  background-image: image_url("gs_record.png");
+}
+
+.ss-dashboard{
+  background-image: image_url("gs_dashboard.png");
+}
