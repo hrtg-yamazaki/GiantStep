@@ -20,6 +20,9 @@
                     = link_to 'データ更新', statuses_path, class: "mypage-interface__box__recalc"
                 .mypage-calendar
                   .mypage-calendar__box
+                    .month-calendar
+                      = month_calendar do |date|
+                        = date.day
 
             .mypage-sheet
               .mypage-sheet__box

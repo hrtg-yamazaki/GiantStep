@@ -69,8 +69,13 @@
 }
 
 .mypage-calendar{
+  width: 100%;
+  height: calc(100% - 54px);
   border-top: $default-border;
-  padding: 10px 5px;
+  padding: 5px;
+  &__box{
+    height: 100%;
+  }
 }
 
 .emphasized-interface-crimson{
