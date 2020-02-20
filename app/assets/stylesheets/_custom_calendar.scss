@@ -41,6 +41,7 @@
           padding: 1px 0;
           border: $default-border;
           text-align: center;
+          cursor: pointer;
         }
       }
     }
@@ -54,9 +55,12 @@
     // .wday-4 {}
     // .wday-5 {}
     // .wday-6 {}
-  
-    .today {
+    .has-events {
       background-color: yellow;
+    }
+    .today {
+      background-color: steelblue;
+      color: whitesmoke;
     }
     // .past {}
     // .future {}
@@ -72,8 +76,6 @@
     }
     // .current-month {}
   
-    .has-events {
-      background-color: steelblue;
-    }
+    
   }
 }
