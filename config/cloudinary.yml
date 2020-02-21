@@ -1,0 +1,8 @@
+---
+production:
+  cloud_name: <%= ENV["GS_CLOUDINARY_NAME"] %>
+  api_key: <%= ENV["GS_CLOUDINARY_KEY"] %>
+  api_secret: <%= ENV["GS_CLOUDINARY_SECRET"] %>
+  enhance_image_tag: true
+  static_file_support: true
+
