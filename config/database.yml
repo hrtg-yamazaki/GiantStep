@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: GiantStep_production
-  username: GiantStep
-  password: <%= ENV['GIANTSTEP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

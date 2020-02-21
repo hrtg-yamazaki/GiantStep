@@ -15,10 +15,11 @@
             - @users.each do |user|
               = link_to user.nickname + "さん", user_path(user)
               %br/
+              %br/
+          - elsif @users
+            %p.completed-message 該当するユーザーはいません
           - else
-            %p 該当するユーザーはいません
-          %br/
-          %br/
+            %p.completed-message キーワードを入力してください
 
 
 
