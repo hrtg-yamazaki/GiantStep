@@ -21,6 +21,7 @@
   }
   
   .mypage-left{
+    min-height: 300px;
     &__content{
       padding: 10px;
       &--left{
@@ -55,6 +56,20 @@
     &__head{
       font-size: 11px;
     }
+  }
+
+  input, select{
+    border: $default-border;
+  }
+
+  .record-field__select{
+    select{
+      text-align: center;
+    }
+  }
+
+  #user_icon{
+    font-size: 12px;
   }
 
 }
