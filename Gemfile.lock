@@ -94,6 +94,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dry-inflector (0.2.0)
@@ -105,6 +106,11 @@ GEM
     erubis (2.7.0)
     excon (0.72.0)
     execjs (2.7.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.1)
@@ -411,6 +417,23 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (3.1.2)
+    rspec-core (3.9.1)
+      rspec-support (~> 3.9.1)
+    rspec-expectations (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.2)
     ruby_dep (1.5.0)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
@@ -493,6 +516,7 @@ DEPENDENCIES
   devise
   enum_help
   erb2haml
+  factory_bot_rails
   fog
   font-awesome-rails
   haml-rails
@@ -504,6 +528,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_calendar
