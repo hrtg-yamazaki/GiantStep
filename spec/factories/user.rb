@@ -5,9 +5,10 @@ FactoryBot.define do
     email                 { "usertest@usertest.com" }
     password              { "test1234" }
     password_confirmation { "test1234" }
-    icon                  { nil }
+    privacy               { "on_public" }
+    icon                  { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/gs_dashboard.png')) }
     gender                { "not_public" }
-    profile               { nil }
+    profile               { "こんにちは" }
     birthday              { Date.new(1990, 01, 01) }
 
   end

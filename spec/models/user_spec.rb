@@ -81,4 +81,82 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "signup#user_create" do
+
+    context "ユーザー登録できる" do
+
+      it "全てのカラムが埋まっていれば登録できる" do
+        user = build(:user)
+        user.valid?(:user_create)
+        expect(user).to be_valid
+      end
+
+      it "nicknameが20文字以下であれば登録できる" do
+        user = build(:user, nickname: '12345678901234567890')
+        user.valid?(:user_create)
+        expect(user).to be_valid
+      end
+
+      it "privacyがon_privateでも登録できる" do
+        user = build(:user, privacy: "on_private")
+        user.valid?(:user_create)
+        expect(user).to be_valid
+      end
+
+      it "iconが空でも登録できる" do
+        user = build(:user, icon: nil)
+        user.valid?(:user_create)
+        expect(user).to be_valid
+      end
+
+      it "profileが空でも登録できる" do
+        user = build(:user, profile: "")
+        user.valid?(:user_create)
+        expect(user).to be_valid
+      end
+
+      it "profileが1000文字以内なら登録できる" do
+        user = build(:user, profile: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        user.valid?(:user_create)
+        expect(user).to be_valid
+      end
+
+    end
+
+    context "保存できない" do
+
+      it "nicknameが空だと登録できない" do
+        user = build(:user, nickname: "")
+        user.valid?(:user_create)
+        expect(user.errors[:nickname]).to include("ニックネーム を入力してください")
+      end
+
+      it "nicknameが21文字以上だと登録できない" do
+        user = build(:user, nickname: '123456789012345678901')
+        user.valid?(:user_create)
+        expect(user.errors[:nickname]).to include("20文字以下で入力してください")
+      end
+
+      it "privacyが空では登録できない" do
+        user = build(:user, privacy: "")
+        user.valid?(:user_create)
+        expect(user.errors[:privacy]).to include("公開設定が選択されていません")
+      end
+
+      it "profileが1001文字以上では登録できない" do
+        user = build(:user, profile: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab")
+        user.valid?(:user_create)
+        expect(user.errors[:profile]).to include("1000文字以下で入力してください")
+      end
+
+      it "birthdayが空では登録できない" do
+        user = build(:user, birthday: "")
+        user.valid?(:user_create)
+        expect(user.errors[:birthday]).to include("生年月日 を入力してください")
+      end
+
+    end
+
+  end
+
 end
