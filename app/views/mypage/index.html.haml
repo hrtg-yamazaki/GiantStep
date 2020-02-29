@@ -3,6 +3,8 @@
 .container
   .wrapper
     .mypage-contents
+      - if flash[:denied]
+        %p.denied-message=flash[:denied]
       .mypage-contents__head
         %h2.mypage-contents__head__text マイページ
       
