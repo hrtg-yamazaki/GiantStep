@@ -63,7 +63,6 @@ class MypageController < ApplicationController
         render 'mypage/yardstick'
       end
     else
-      binding.pry
       flash.now[:alert] = "正常に登録できませんでした"
       render 'mypage/yardstick'
     end
