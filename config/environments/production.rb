@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # about timezone
-  config.active_record.default_timezone = :local
+  # config.active_record.default_timezone = :local
 end
