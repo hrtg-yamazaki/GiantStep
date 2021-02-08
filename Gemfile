@@ -76,7 +76,7 @@ gem 'chart-js-rails'
 
 gem 'simple_calendar'
 
-gem 'carrierwave', '~> 1.3.1'
+gem 'carrierwave', '~> 1.3.2'
 gem 'mini_magick'
 
 gem 'fog'
